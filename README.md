@@ -57,6 +57,8 @@ All viewports designed mobile-responsive (board view collapses to a swipeable si
 
 ## System Architecture
 
+![ERD](architecture/erd.png)
+
 See `architecture/erd.png` (exported from `architecture/schema.dbml`) for the full Entity Relationship Diagram.
 
 **Collections:** Users, Projects, Boards, Tasks, ActivityLog
