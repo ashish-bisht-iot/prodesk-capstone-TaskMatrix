@@ -18,8 +18,6 @@ Fullstack (Track B)
 | Auth | JWT (jsonwebtoken + bcryptjs) |
 | Deployment | Frontend → Vercel, Backend → Render |
 
-*Rationale: continuing the stack proven across Sprints 09–11 (Data Hub API, Cine-Stream, Wire) minimizes new-tool risk during a 5-week solo build, and Socket.io is already battle-tested from the Wire project for the real-time activity feed requirement.*
-
 ## Core Features (Prioritized)
 
 ### P0 — MVP Must-Haves
@@ -45,7 +43,7 @@ Fullstack (Track B)
 
 ## Wireframes (Figma)
 
-`[Insert public Figma link here]`
+https://www.figma.com/design/d0SAouTCsb5tiPpxsJXuLl/TaskMatrix-%E2%80%94-Wireframes?node-id=0-1&t=ItRo9ritEy2o399C-1
 
 Core viewports covered:
 - Auth screen (login/register)
