@@ -1,0 +1,53 @@
+// TaskMatrix — paste this at https://dbdiagram.io to auto-generate the ERD image
+// Export as PNG and save to architecture/erd.png, then embed in README.md
+
+Table Users {
+  _id ObjectId [pk]
+  name String
+  email String [unique]
+  passwordHash String
+  createdAt DateTime
+}
+
+Table Projects {
+  _id ObjectId [pk]
+  name String
+  description String
+  ownerId ObjectId [ref: > Users._id]
+  createdAt DateTime
+}
+
+Table ProjectMembers {
+  _id ObjectId [pk]
+  projectId ObjectId [ref: > Projects._id]
+  userId ObjectId [ref: > Users._id]
+  role String [note: 'Admin | Member']
+}
+
+Table Boards {
+  _id ObjectId [pk]
+  projectId ObjectId [ref: > Projects._id]
+  columns String [note: 'embedded array: [{ id, name, order }]']
+}
+
+Table Tasks {
+  _id ObjectId [pk]
+  boardId ObjectId [ref: > Boards._id]
+  columnId String
+  title String
+  description String
+  assigneeId ObjectId [ref: > Users._id]
+  priority String [note: 'Low | Medium | High | Urgent']
+  deadline DateTime
+  order Int
+  createdAt DateTime
+}
+
+Table ActivityLog {
+  _id ObjectId [pk]
+  projectId ObjectId [ref: > Projects._id]
+  userId ObjectId [ref: > Users._id]
+  taskId ObjectId [ref: > Tasks._id]
+  action String [note: 'task_moved | task_assigned | task_commented | task_created']
+  timestamp DateTime
+}
